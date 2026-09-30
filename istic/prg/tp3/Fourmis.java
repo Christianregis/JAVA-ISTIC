@@ -23,6 +23,7 @@ public class Fourmis {
 
     public static void main(String[] args) {
         String value = "1";
+        System.out.println("U0 = " + value);
         for (int i = 1; i <= 9; i++) {
             value = Fourmis.next(value);
             System.out.println("U" + i + " = " + value);
