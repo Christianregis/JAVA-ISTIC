@@ -10,5 +10,7 @@ public class TestInsertionInteger {
         InsertionInteger insertionInteger = new InsertionInteger();
         insertionInteger.createArray(scanner);
         System.out.println(insertionInteger);
+
+        scanner.close();
     }
 }
