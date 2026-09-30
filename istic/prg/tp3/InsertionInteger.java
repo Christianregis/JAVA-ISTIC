@@ -13,7 +13,7 @@ public class InsertionInteger {
         for (int i = 0; i < array.length; i++) {
             array[i] = 0;
         }
-        size = array.length;
+        size = 0;
     }
 
     public int[] toArray() {
@@ -25,22 +25,27 @@ public class InsertionInteger {
     }
 
     public boolean insert(int value) {
-        if (array[array.length - 1] != 0) {
+        if (value == 0 || size >= array.length) {
             return false;
         }
-        for (int i = 0; i < array.length; i++) {
+
+        for (int i = 0; i < size; i++) {
             if (array[i] == value) {
                 return false;
             }
-            if (array[i] > value || array[i] == 0) {
-                for (int j = array.length - 2; j >= i; j--) {
-                    array[j + 1] = array[j];
+            if (array[i] > value) {
+                for (int j = size; j > i; j--) {
+                    array[j] = array[j - 1];
                 }
                 array[i] = value;
+                size++;
                 return true;
             }
         }
-        return false;
+
+        array[size] = value;
+        size++;
+        return true;
     }
 
     public void createArray(Scanner scanner) {
